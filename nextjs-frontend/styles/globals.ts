@@ -38,6 +38,7 @@ textarea:focus, input:focus, select:focus {
     font-size: 70%;
   }
 }
+
 `;
 
 export default GlobalStyle;

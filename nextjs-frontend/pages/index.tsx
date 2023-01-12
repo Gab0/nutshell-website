@@ -7,11 +7,9 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   return (
     <>
-      <header>
-        <div></div>
-      </header>
+      <Header></Header>
       <main>
-        <Header></Header>
+        <Navigator></Navigator>
       </main>
     </>
   );
@@ -20,13 +18,22 @@ export default function Home() {
 export function Header() {
   return (
     <>
+      <header>
       <div className="main">
-        <section>
-          <h1>Nutshell</h1>
+        <section className={inter.className}>
+          <h1>nutshell</h1>
           <p>Bioinformatics and Software Development</p>
         </section>
-        <Navigator></Navigator>
       </div>
+      </header>
+    </>
+  )
+}
+
+export function MenuLink(address: string, identifier: string) {
+  return (
+    <>
+      <Link href={address} className="nav-button">{identifier}</Link>
     </>
   )
 }
@@ -34,10 +41,12 @@ export function Header() {
 export function Navigator() {
   return (
     <>
-      <section>
-            <Link href="/about">About</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/projects">Projects</Link>
+      <section className="main">
+            {MenuLink("/about", "About")}
+            {MenuLink("/blog", "Blog")}
+            {MenuLink("/projects", "Projects")}
+            {MenuLink("/tools", "Tools")}
+            {MenuLink("/services", "Services")}
       </section>
     </>
   )
