@@ -1,18 +1,9 @@
+import Layout from "../components/layout/Layout";
 
-import Header from "../components/header/Header";
-import Navigator from "../components/navigator/Navigator";
-import Content from "../components/content/Content";
+import content from "../../content/projects.md";
 
-import content_projects from "../../content/projects.md";
-
-export default function Home() {
+export default function Project() {
   return (
-    <>
-      <Header></Header>
-      <main>
-        <Navigator></Navigator>
-        <Content markdown={content_projects}></Content>
-      </main>
-    </>
+      <Layout content={content} />
   );
 }
