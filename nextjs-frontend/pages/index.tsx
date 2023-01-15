@@ -2,6 +2,14 @@ import { Inter } from '@next/font/google';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+import Content from "../components/content/Content";
+import Header from "../components/header/Header";
+import Navigator from "../components/navigator/Navigator";
+
+import content_home from "../../content/home.md";
+import content_services from "../../content/services.md";
+import content_projects from "../../content/projects.md";
+
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
@@ -10,44 +18,9 @@ export default function Home() {
       <Header></Header>
       <main>
         <Navigator></Navigator>
+        <Content markdown={content_home}></Content>
       </main>
     </>
   );
 }
 
-export function Header() {
-  return (
-    <>
-      <header>
-      <div className="main">
-        <section className={inter.className}>
-          <h1>nutshell</h1>
-          <p>Bioinformatics and Software Development</p>
-        </section>
-      </div>
-      </header>
-    </>
-  )
-}
-
-export function MenuLink(address: string, identifier: string) {
-  return (
-    <>
-      <Link href={address} className="nav-button">{identifier}</Link>
-    </>
-  )
-}
-
-export function Navigator() {
-  return (
-    <>
-      <section className="main">
-            {MenuLink("/about", "About")}
-            {MenuLink("/blog", "Blog")}
-            {MenuLink("/projects", "Projects")}
-            {MenuLink("/tools", "Tools")}
-            {MenuLink("/services", "Services")}
-      </section>
-    </>
-  )
-}
