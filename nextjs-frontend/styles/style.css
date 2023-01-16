@@ -1,16 +1,23 @@
-
-.main {
+.center {
   margin: auto;
   width: 50%;
+}
+
+.main {
   border: 0.1em solid green;
   padding: 2em;
   text-align: center;
   margin-top: 1em;
 }
 
+.content {
+
+}
 .nav-button {
     border: 1em;
     padding: 3%;
+    text-decoration: none;
+    color: black;
 
 }
 

@@ -10,7 +10,7 @@ interface Props {
 export default class Content extends Component<Props, {}> {
   render() {
     return (
-      <div className="main">
+      <div className="content center">
       <ReactMarkdown remarkPlugins={[remarkGfm]}>
         {this.props.markdown}
       </ReactMarkdown>
