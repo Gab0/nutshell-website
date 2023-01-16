@@ -6,4 +6,4 @@ A company focused on bioinformatics analyses.
 * Web services
 * HPC deployments
 * High performance software development with C and Rust
-* Highly abstract software development with Haskell
+* Functional data processing pipelines and parsers with Haskell

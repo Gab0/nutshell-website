@@ -1,11 +1,13 @@
 # Web Services
 
+
+
 ## Speciespedia
 
 [SpeciesPedia](/speciespedia)
 
-An educative page where users can find information by species name. 
-There are a species classification game.
+An educative page where users can find information on biological species by species name. 
+Additionally, there is a species classification game that might be educative.
 
 ## Biomedmap
 
