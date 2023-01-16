@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 
 import Link from 'next/link';
-import "./navigator.module.css";
 
 function MenuLink(address: string, identifier: string) {
   return (
