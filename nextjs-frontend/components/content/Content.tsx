@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
+
+import rehypeRaw from "rehype-raw";
 import remarkGfm from 'remark-gfm';
 
 
@@ -11,7 +13,10 @@ export default class Content extends Component<Props, {}> {
   render() {
     return (
       <div className="content center">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+      >
         {this.props.markdown}
       </ReactMarkdown>
       </div>
