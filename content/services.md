@@ -1,7 +1,3 @@
-# Web Services
-
-
-
 ## Speciespedia
 
 [SpeciesPedia](/speciespedia)
