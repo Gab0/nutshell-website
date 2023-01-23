@@ -1,5 +1,5 @@
 
-We offer the following services, in the context of computational biology:
+We offer the following services, in the context of **computational biology**:
 
 * Pipelines
 * Software development
