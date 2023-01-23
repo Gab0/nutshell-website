@@ -1,18 +1,8 @@
 /*
  * A trivial canvas-based implementation of the Biomorphs in Richard Dawkins' book The
  * Blind Watchmaker.
- *
- * This script assumes the presence of HTML elements with the following ids:
- *
- *   main                  - a canvas element in which to draw a controlled biomorph
- *   slider0 ... slider8   - a slider for each gene to control the main biomorph
- *   genes0 ... genes8     - elements in which to write the gene value for each slider
- *   randomize             - a button
- *   c0 ... c11            - canvases for the artificial selection section
- *   info1 ... info11      - elements in which to write the gene values
- *
- * This script is a hack.  Don't use it as an example of good JavaScript.
- * Stolen from <https://cs.lmu.edu/~ray/code/js/biomorphs.js>
+
+ * Adapted from <https://cs.lmu.edu/~ray/code/js/biomorphs.js>
  */
 import random from 'random';
 
@@ -22,25 +12,11 @@ export default class Biomorph {
   position: number;
   genes: Array<number>;
 
-  constructor(g: Array<number>) {
-    // Initialize from a gene array
-
+  constructor(g: Array<number>, canvasHeight: number) {
     this.genes = g;
 
-    // Spawn from a parent by tweaking one gene +/- 2
-    // } else if (g instanceof Biomorph) {
-    //   this.genes = g.genes.slice();
-    //   var mutation;
-
-
-    // // Make a completely random biomorph
-    // } else {
-    //   this.genes = [];
-
-    // }
-
     this.width = 100;
-    this.height = 100;
+    this.height = canvasHeight;
     this.position = 0;
   }
 
@@ -53,8 +29,11 @@ export default class Biomorph {
   }
 
   mutate() {
-      this.genes[random.int(0, 9)] += random.int(-3, 3);
-      if (this.genes[8] < 3) this.genes[8] = 3;
+    const idx = random.int(0, 9);
+    this.genes[idx] += random.int(-3, 3);
+    if (this.genes[idx] < -8) this.genes[idx] = -8;
+    if (this.genes[idx] > 8) this.genes[idx] = 8;
+    if (this.genes[8] < 3) this.genes[8] = 3;
   }
 
   draw(ctx: CanvasRenderingContext2D) {
@@ -73,7 +52,10 @@ export default class Biomorph {
     this.tree(ctx, this.position + (this.width/2), this.height/2, dx, dy, g[8], 2);
   }
 
-  tree(ctx: CanvasRenderingContext2D, x: number, y: number, dx: Array<number>, dy: Array<number>, len: number, dir: number) {
+  tree(ctx: CanvasRenderingContext2D,
+       x: number, y: number,
+       dx: Array<number>, dy: Array<number>,
+       len: number, dir: number) {
     const x2 = x + (len * dx[dir]);
     const y2 = y + (len * dy[dir]);
     ctx.beginPath();

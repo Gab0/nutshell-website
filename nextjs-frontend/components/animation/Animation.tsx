@@ -8,11 +8,14 @@ import useWindowSize from '@react-hook/window-size';
 export default class Biomorphs extends Component {
   biomorph: Biomorph;
   width: number;
+  height: number;
+
   constructor(props: {}) {
     super(props);
 
     this.width = 700;
-    this.biomorph = new Biomorph([]);
+    this.height = 200;
+    this.biomorph = new Biomorph([], this.height);
     this.biomorph.randomize();
   }
 
@@ -29,18 +32,19 @@ export default class Biomorphs extends Component {
 
   drawBiomorphs(ctx: CanvasRenderingContext2D, frameCount: number) {
     this.biomorph.position = (50 + frameCount) % this.width;
-    if (frameCount % 20 == 0) this.biomorph.mutate();
+    if (frameCount % 5 == 0) this.biomorph.mutate();
     this.biomorph.draw.bind(this.biomorph)(ctx)
   }
 
   render() {
-
     return (
+      <center>
       <Canvas
         draw={this.drawBiomorphs.bind(this)}
         width={this.width}
-        height={300}
+        height={this.height}
       />
+      </center>
     );
   }
 }
