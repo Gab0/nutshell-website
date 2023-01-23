@@ -5,25 +5,21 @@ import Biomorph from './biomorphs';
 import Canvas from './Canvas';
 import useWindowSize from '@react-hook/window-size';
 
-const ComponentW = (props) => {
-  const [width, height] = useWindowSize()
-  this.width = width;
-}
-
 export default class Biomorphs extends Component {
-  constructor(props) {
+  biomorph: Biomorph;
+  width: number;
+  constructor(props: {}) {
     super(props);
 
     this.width = 700;
-    const genes = [9, 0, 1, 3, 5, 3, 8, 6, 3];
-    this.biomorph = new Biomorph(genes);
+    this.biomorph = new Biomorph([]);
     this.biomorph.randomize();
   }
 
   componentDidMount() {
   }
 
-  drawBall(ctx, frameCount) {
+  drawBall(ctx: CanvasRenderingContext2D, frameCount: number) {
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       ctx.fillStyle = '#000000';
       ctx.beginPath();
@@ -31,19 +27,20 @@ export default class Biomorphs extends Component {
       ctx.fill();
   }
 
-  drawBiomorphs(ctx, frameCount) {
+  drawBiomorphs(ctx: CanvasRenderingContext2D, frameCount: number) {
     this.biomorph.position = (50 + frameCount) % this.width;
     if (frameCount % 20 == 0) this.biomorph.mutate();
-    this.biomorph.draw.bind(this.biomorph)(ctx, "")
+    this.biomorph.draw.bind(this.biomorph)(ctx)
   }
 
   render() {
 
     return (
-      <Canvas draw={
-        //this.drawBall.bind(this)
-        this.drawBiomorphs.bind(this)
-      } width={this.width + "em"}/>
+      <Canvas
+        draw={this.drawBiomorphs.bind(this)}
+        width={this.width}
+        height={300}
+      />
     );
   }
 }
