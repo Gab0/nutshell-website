@@ -1,75 +1,64 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { animated, useSpring } from 'react-spring';
 import styled from 'styled-components';
 import Biomorph from './biomorphs';
 import Canvas from './Canvas';
-import useWindowSize from '@react-hook/window-size';
+import { useWindowSize } from '@react-hook/window-size';
 
-export default class Biomorphs extends Component {
-  biomorphs: Array<Biomorph>;
-  biomorphCount: number;
-  width: number;
-  height: number;
+const Biomorphs: React.FC = () => {
+  const [biomorphCount, setBiomorphCount] = useState<number>(5);
+  const [width, setWidth] = useState<number>(700);
+  const [height, setHeight] = useState<number>(200);
+  let frameStep = 5;
 
-  constructor(props: {}) {
-    super(props);
+  const generateBiomorphs = () => {
+    const newBiomorphs: Array<Biomorph> = [];
 
-    this.biomorphs = [];
-    this.width = 700;
-    this.height = 200;
-    this.biomorphCount = 5;
-
-    for (var i = 0; i < this.biomorphCount; i++) {
-      let biomorph = new Biomorph([], this.height);
+    for (let i = 0; i < biomorphCount; i++) {
+      let biomorph = new Biomorph([], height);
       biomorph.randomize();
-      this.biomorphs.push(biomorph);
+      newBiomorphs.push(biomorph);
     }
-    console.log(this.biomorphs);
+    return newBiomorphs;
   }
 
-  componentDidMount() {
-  }
+  useEffect( () => {
+    setWidth(window.innerWidth);
+  });
 
-  drawBall(ctx: CanvasRenderingContext2D, frameCount: number) {
+  const biomorphs: Array<Biomorph> = generateBiomorphs();
+
+  const drawBall = (ctx: CanvasRenderingContext2D, frameCount: number) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.fillStyle = '#000000';
     ctx.beginPath();
-    ctx.arc((50 + frameCount) % this.width, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI);
+    ctx.arc((50 + frameCount) % width, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI);
     ctx.fill();
-  }
+  };
 
-  drawBiomorphs(ctx: CanvasRenderingContext2D, frameCount: number) {
-    if (frameCount % 5 == 0) this.reset(ctx);
+  const drawBiomorphs = (ctx: CanvasRenderingContext2D, frameCount: number) => {
+    if (frameCount % frameStep === 0) reset(ctx);
+    if (frameCount % 300 === 0) frameStep = (1 + Math.floor(Math.random() * 3));
 
-    for (let i=0; i < this.biomorphCount; i++) {
-      const biomorph = this.biomorphs[i];
-      biomorph.position = (250 * i + frameCount) % this.width;
-      if (frameCount % 5 == 0) biomorph.mutate();
-      biomorph.draw.bind(biomorph)(ctx)
+    for (let i = 0; i < biomorphCount; i++) {
+      const biomorph = biomorphs[i];
+      biomorph.position = (250 * i + frameCount) % width;
+      if (frameCount % 5 === 0) biomorph.mutate();
+      biomorph.draw.bind(biomorph)(ctx);
     }
+  };
 
-  }
+  const reset = (ctx: CanvasRenderingContext2D) => {
+    ctx.clearRect(0, 0, width, height);
+    //ctx.fillStyle = "#C9FFD950";
+    //ctx.fillRect(0, 0, width, height);
+  };
 
-  reset(ctx: CanvasRenderingContext2D) {
+  return (
+    <center>
+      <Canvas draw={drawBiomorphs} width={width} height={height} />
+    </center>
+  );
+};
 
-    ctx.clearRect(
-      0,
-      0,
-      this.width,
-      this.height
-    );
-
-  }
-
-  render() {
-    return (
-      <center>
-      <Canvas
-        draw={this.drawBiomorphs.bind(this)}
-        width={this.width}
-        height={this.height}
-      />
-      </center>
-    );
-  }
-}
+export default Biomorphs;

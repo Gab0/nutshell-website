@@ -1,14 +1,20 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react';
 
-const Canvas = (props: {height: number, width: number, draw: Function}) => {
+interface CanvasProps {
+  height: number;
+  width: number;
+  draw: (context: CanvasRenderingContext2D, frameCount: number) => void;
+}
 
-  const { draw, ...rest } = props
-  const canvasRef = useRef(null);
-
+const Canvas: React.FC<CanvasProps> = ({ height, width, draw }) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    const canvas: null | any = canvasRef.current;
-    const context: CanvasRenderingContext2D = canvas.getContext('2d');
+    const context = canvas.getContext('2d');
+    if (!context) return;
+
     let frameCount = 0;
     let animationFrameId: number;
 
@@ -16,15 +22,15 @@ const Canvas = (props: {height: number, width: number, draw: Function}) => {
       frameCount++;
       draw(context, frameCount);
       animationFrameId = window.requestAnimationFrame(render);
-    }
-    render()
+    };
+    render();
 
     return () => {
       window.cancelAnimationFrame(animationFrameId!);
-    }
-  }, [draw])
+    };
+  }, [draw]);
 
-  return <canvas ref={canvasRef} {...rest}/>
-}
+  return <canvas ref={canvasRef} height={height} width={width} />;
+};
 
-export default Canvas
+export default Canvas;

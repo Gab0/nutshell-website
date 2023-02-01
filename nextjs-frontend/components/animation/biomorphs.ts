@@ -50,8 +50,9 @@ export default class Biomorph {
 
     const strokes: strokesT = this.tree(this.position + (this.width / 2), this.height / 2, dx, dy, g[8], 2);
 
-    ctx.strokeStyle = 'white';
-    this.drawStrokes(ctx, this.strokes);
+    ctx.lineWidth = 3;
+    //ctx.strokeStyle = 'white';
+    //this.drawStrokes(ctx, this.strokes);
 
     this.strokes = strokes;
 
