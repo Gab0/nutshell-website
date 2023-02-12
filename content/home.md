@@ -8,5 +8,6 @@ We offer the following services, in the context of **computational biology**:
 * High performance software development with C and Rust
 * Data processing pipelines and parsers with functional programming (Haskell)
 * Machine Learning design and implementation
-* Populational genomics analyses 
+* Populational genomics analyses (.ped, .vcf, imputation, ...)
+
 

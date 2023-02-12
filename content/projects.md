@@ -19,3 +19,12 @@ Also capable of rendering distance matrices that represent differences between e
 An analysis protocol to compare structural differences in immunogenic proteins used in immunoassay diagnosis kits.
 
 This protocol is part of a study that tries to improve immunodiagnosis methods used in clinical evaluation of suspected toxoplasmosis patients.
+
+## BioMedMap [<img src="github-mark.png" width="19">](https://github.com/Gab0/biomedmap)
+
+A system to extract information from multiple research articles and
+break down the critical parts to the user. 
+
+Capable of creating information graphs on perceived interactions between biomedical entities. 
+
+Runs on top of existing biomedical NLP engines such as Indra and Reach.
