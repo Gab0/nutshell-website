@@ -8,6 +8,8 @@ The frontend for the nutshell website. Planned features include:
 
 ## Milestones
 
-1. [TODO] Implement banner, basic layout and navigator. 
-2. [TODO] Implement section content reading from Markdown files.
-3. [TODO] Write content for sections.
+1. Implement banner, basic layout and navigator. 
+2. Implement section content reading from Markdown files.
+3. Write content for sections.
+4. [TODO] Deploy projects.
+5. [TODO] Improve the animation, possibly adding some interactiveness.
