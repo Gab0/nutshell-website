@@ -9,7 +9,7 @@ const Biomorphs: React.FC = () => {
   const [biomorphCount, setBiomorphCount] = useState<number>(5);
   const [width, setWidth] = useState<number>(700);
   const [height, setHeight] = useState<number>(200);
-  let frameStep = 5;
+  let frameStep = 1;
 
   const generateBiomorphs = () => {
     const newBiomorphs: Array<Biomorph> = [];
@@ -38,7 +38,7 @@ const Biomorphs: React.FC = () => {
 
   const drawBiomorphs = (ctx: CanvasRenderingContext2D, frameCount: number) => {
     if (frameCount % frameStep === 0) reset(ctx);
-    if (frameCount % 300 === 0) frameStep = (1 + Math.floor(Math.random() * 0));
+    if (frameCount % 300 === 0) frameStep = 1; //(1 + Math.floor(Math.random() * 0));
 
     for (let i = 0; i < biomorphCount; i++) {
       const biomorph = biomorphs[i];
