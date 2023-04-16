@@ -1,18 +1,24 @@
-## <a href="http://nutshellbiotech.ddns.net:8010" class="service-button">[WIP] Pdf Vr</a>
 
-This is a PDF presenter unlike anything ever seen. 
+We offer the following services on **software development**:
 
-Throw away MS Power Point and embrace the questionable utility
-of this PDF presenter that lets you show slides while inside a 3D environment.
+### Computational biology
 
+* Populational genomics analyses, managing .ped or .vcf data
+* Genomic imputation for population samples
+* Phylogenetic analyses
 
-## <a href="http://nutshellbiotech.ddns.net:8001" class="service-button">SpeciesPedia</a>
+### Scientific computation
 
-A page where users can find information on biological species by species name. 
+* Software development
+* HPC deployments
+* Web service design and deployment
+* Machine Learning projects: design, implementation and management
+* General-purpose pipeliens
+* Plots of any kind
 
-Additionally, there is a species classification game that might be educative.
+### General programming
 
-## <a href="http://nutshellbiotech.ddns.net:3003" class="service-button">HippieOracle</a>
-
-Generates random points in the world map.
-Works on top of google maps and provides random targets for walks or anything else that could use that.
+* High performance software development with C/C++ and Rust
+* Backend development for web services
+* Data processing pipelines
+* Advanced parsers with functional programming (Haskell)
