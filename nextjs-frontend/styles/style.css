@@ -9,23 +9,49 @@
   width: 50%;
 }
 
-canvas {
-  border: 0em;
+body {
+  background-color: white;
+  margin: 0px;
+  font-family: Helveltica, sans-serif;
 }
-.main {
+
+.animation {
+  border: 0em;
+  margin-bottom: -0.3em;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: (var--1);
+}
+
+.top {
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.header {
   padding: 2em;
   text-align: center;
-  margin-top: 1em;
+  margin-top: 0em;
   background-color: var(--1);
-  border-radius: 10px;
+  border-radius: 0em;
+  z-index: 12;
+  height: 120px;
+}
+
+.title {
+  z-index: 10;
 }
 
 .navbar {
   text-align: center;
   padding: 0.8em;
   background-color: var(--2);
-  border-radius: 10px;
+  border-radius: 0em;
+  margin: auto;
 }
+
 .content {
 }
 
@@ -96,8 +122,8 @@ canvas {
 .nav-button:active::after {
   transition: 0s;
   transform: translate(0, 5%);
-}
 
+}
 
 .title-button {
   backface-visibility: hidden;
@@ -205,4 +231,21 @@ canvas {
 
 .service-button:focus:not(:active) {
   box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+}
+
+.footer {
+  background-color: var(--3);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0.3em;
+}
+
+.spacer {
+  height: 15em;
+}
+
+.contact {
+  color: black;
+
 }
