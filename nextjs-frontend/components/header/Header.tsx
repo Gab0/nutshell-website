@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { Inter } from '@next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
-export default class Header extends Component {
-  render() {
+const Header = () => {
       return (
           <>
               <header>
-                  <div className="main">
+                  <div className="header">
                       <section className={inter.className}>
                           <h1>nutshell</h1>
                           <p>Bioinformatics and Software Development</p>
@@ -17,5 +16,7 @@ export default class Header extends Component {
               </header>
           </>
       )
-  }
+
 }
+
+export default Header;
