@@ -5,10 +5,10 @@ import Biomorph from './biomorphs';
 import Canvas from './Canvas';
 import { useWindowSize } from '@react-hook/window-size';
 
-const Biomorphs: React.FC = () => {
+const Biomorphs: React.FC<{height: number}> = ({height}) => {
   const [biomorphCount, setBiomorphCount] = useState<number>(5);
   const [width, setWidth] = useState<number>(700);
-  const [height, setHeight] = useState<number>(200);
+  //const [height, setHeight] = useState<number>(200);
   let frameStep = 1;
 
   const generateBiomorphs = () => {
@@ -24,7 +24,13 @@ const Biomorphs: React.FC = () => {
 
   useEffect( () => {
     setWidth(window.innerWidth);
-  });
+
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize)
+
+  }, []);
 
   const biomorphs: Array<Biomorph> = generateBiomorphs();
 
