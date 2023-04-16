@@ -1,6 +1,6 @@
 import Layout from "../components/layout/Layout";
 
-import content from "../../content/home.md";
+import content from "../../content/services.md";
 
 export default function Home() {
   return (

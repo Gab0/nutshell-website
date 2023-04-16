@@ -19,9 +19,10 @@ export default class Navigator extends Component {
         return (
             <>
       <section className="navbar">
-            {MenuLink("/", "About")}
-            {MenuLink("/projects", "Past Projects")}
-            {MenuLink("/services", "Web Services")}
+        {MenuLink("/", "Provided Services")}
+        {MenuLink("/projects", "Projects")}
+        {MenuLink("/services", "Web Services")}
+        {MenuLink("/contact", "Contact")}
       </section>
     </>
 
