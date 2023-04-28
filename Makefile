@@ -1,4 +1,4 @@
 all:
-	cd nextjs-frontend && yarn export
+	cd frontend && yarn export
 deploy:
-	surge /home/gabs/nutshell/nutshell-website/nextjs-frontend/out nutshellbiotech.com
+	surge /home/gabs/nutshell/nutshell-website/frontend/out nutshellbiotech.com
