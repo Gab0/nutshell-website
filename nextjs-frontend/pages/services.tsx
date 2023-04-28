@@ -1,9 +1,13 @@
 import Layout from "../components/layout/Layout";
 
 import content from "../../content/web-services.md";
+import ServiceStatusDisplay from "../components/service/checker";
 
 export default function Services() {
   return (
-      <Layout content={content} />
+    <>
+    <ServiceStatusDisplay />
+    <Layout content={content} />
+    </>
   );
 }
