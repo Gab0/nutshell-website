@@ -16,4 +16,5 @@ Additionally, there is a taxonomy game that might be fun and educative.
 ## <a href="http://nutshellbiotech.ddns.net:3003" class="service-button">HippieOracle</a>
 
 Generates random points in the world map.
-Works on top of google maps and provides random targets for walks or anything else that could use that.
+
+Works on top of google maps and provides random geographical targets for hiking, cycling, picnics, illegal activities, treasure hiding, or anything else.
