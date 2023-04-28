@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { animated, useSpring } from 'react-spring';
 import styled from 'styled-components';
 import Biomorph from './biomorphs';
 import Canvas from './Canvas';
-import { useWindowSize } from '@react-hook/window-size';
 
 const Biomorphs: React.FC<{height: number}> = ({height}) => {
-  const [biomorphCount, setBiomorphCount] = useState<number>(5);
+  const [biomorphCount, _setBiomorphCount] = useState<number>(5);
   const [width, setWidth] = useState<number>(700);
   //const [height, setHeight] = useState<number>(200);
   let frameStep = 1;
@@ -48,10 +46,21 @@ const Biomorphs: React.FC<{height: number}> = ({height}) => {
 
     for (let i = 0; i < biomorphCount; i++) {
       const biomorph = biomorphs[i];
-      biomorph.position = (250 * i + frameCount) % width;
-      if (frameCount % 5 === 0) biomorph.mutate();
+      let initial = -210 * biomorphCount;
+      let position = initial + 250 * i + frameCount;
+
+      if (position < -100) {
+        continue;
+      }
+
+      if (frameCount % 5 === 0) {
+        biomorph.mutate();
+      }
+
+      biomorph.position = position % width;
       biomorph.draw.bind(biomorph)(ctx);
     }
+
   };
 
   const reset = (ctx: CanvasRenderingContext2D) => {
