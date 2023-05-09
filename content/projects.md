@@ -2,7 +2,7 @@
 
 A genetic algorithm system developed to evolve [Gekko]() trading bot strategies.
 
-There is a plan to convert it to a multi-purpose genetic algorithm.
+There is a plan to convert it into a multi-purpose genetic algorithm.
 
 ### autoGromacs [<img src="github-mark.png" width="15">](https://github.com/Gab0/auto-gromacs)
 
