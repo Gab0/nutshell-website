@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { ReactNode } from 'react';
 
 import Header from "../header/Header";
 import Navigator from "../navigator/Navigator";
@@ -6,7 +6,11 @@ import Content from "../content/Content";
 import Animation from "../animation/Animation";
 import Footer from "../footer/Footer";
 
-const Layout: React.FC<{content: string}> = ({ content }) => {
+interface Layout {
+    content: string,
+    preamble?: ReactNode
+}
+const Layout: React.FC<Layout> = ({ content, preamble }) => {
 
     return (
         <div className="mainx">
@@ -20,6 +24,7 @@ const Layout: React.FC<{content: string}> = ({ content }) => {
 
             <main>
                 <div className="spacer"></div>
+                { preamble }
                 <Content markdown={content} />
             </main>
             <Footer />
