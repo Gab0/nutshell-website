@@ -4,8 +4,6 @@ import React from "react";
 import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 
-import MailIcon from '@mui/icons-material/Mail';
-
 const ServiceStatusDisplay = () => {
 
   const circle = (color: string) => {
@@ -13,12 +11,12 @@ const ServiceStatusDisplay = () => {
     const shapeStyles = { bgcolor: color, width: 40, height: 40 };
     const shapeCircleStyles = { borderRadius: '50%' };
     return (
-  <Box component="span" sx={{ ...shapeStyles, ...shapeCircleStyles }} />
+      <Box component="span" sx={{ ...shapeStyles, ...shapeCircleStyles }} />
   )}
   ;
 
-  const server_url = "http://nutshellbiotech.ddns.net:3333"
-  //const server_url = "https://www.google.com.br";
+  const server_url = "http://nutshellbiotech.ddns.net:3333";
+
   const [status, setStatus] = React.useState(0);
 
   const headers = {
@@ -53,16 +51,16 @@ const ServiceStatusDisplay = () => {
 
     switch (status) {
       case 200: {
-      color = "green";
-      message = "Services are online.";
+        color = "green";
+        message = "Services are online.";
+        break;
       }
 
       case 400: {
-      color = "red";
-      message = "Services appear to be offline.";
+        color = "red";
+        message = "Services appear to be offline.";
       }
     }
-
 
     return (
       <>
@@ -72,6 +70,7 @@ const ServiceStatusDisplay = () => {
       </>
     )
   }
+
   console.log(status);
     return (
       <div className="center">
