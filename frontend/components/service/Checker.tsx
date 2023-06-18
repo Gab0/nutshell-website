@@ -15,7 +15,7 @@ const ServiceStatusDisplay = () => {
   )}
   ;
 
-  const server_url = "http://nutshellbiotech.ddns.net:3333";
+  const server_url = "https://services.nutshellbiotech.com:3333";
 
   const [status, setStatus] = React.useState(0);
 
