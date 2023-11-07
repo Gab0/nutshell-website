@@ -6,15 +6,15 @@ We offer the following services on **software development**:
 * Populational genomics analyses, managing .ped or .vcf data
 * Genomic imputation for population samples
 * Phylogenetic analyses
+* Epigenetic analyses with GEO datasets
 
 ### Scientific computation
 
-* Software development
-* HPC deployments
+* Analysis pipelines from specifications or from papers
+* High Performance Computing (HPC) deployments
 * Web service design and deployment
 * Machine Learning projects: design, implementation and management
-* General-purpose pipeliens
-* Plots of any kind
+* Plots and data visualization
 
 ### General programming
 
