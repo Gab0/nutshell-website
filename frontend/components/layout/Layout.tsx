@@ -13,22 +13,24 @@ interface Layout {
 const Layout: React.FC<Layout> = ({ content, preamble }) => {
 
     return (
+        <>
         <div className="mainx">
-            <div className="top">
-            <Header />
-                <div className="animation">
-                <Animation height={180} />
-                </div>
-                <Navigator />
-            </div>
+        <div className="top">
+        <Header />
+        <div className="animation">
+        <Animation height={180} />
+        </div>
+        <Navigator />
+        </div>
 
-            <main>
+        <main>
                 <div className="spacer"></div>
                 { preamble }
                 <Content markdown={content} />
             </main>
             <Footer />
         </div>
+        </>
     );
 }
 
