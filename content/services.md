@@ -3,10 +3,15 @@ We offer the following services on **software development**:
 
 ### Computational biology
 
-* Populational genomics analyses, managing .ped or .vcf data
+* Any kind of data processing pipeline for biological data
+* Structural biology: molecular dynamics planning and analysis
+* Populational genomics analyses, managing .ped/.map or .vcf data
 * Genomic imputation for population samples
 * Phylogenetic analyses
-* Epigenetic analyses with GEO datasets
+* Data extraction from any biological dataset. NCBI, Ensembl, ...
+* NLP analyses on Biomedical literature.
+* QIIME2 pipeline engineering
+* Human genomic analyses, health and ancestry (22andMe, ...)
 
 ### Scientific computation
 
@@ -18,7 +23,8 @@ We offer the following services on **software development**:
 
 ### General programming
 
-* High performance software development with C/C++ and Rust
+* Advanced LLM (ChatGPT & friends) prompt engineering
+* High performance software development with C/C++/Rust
 * Backend development for web services
 * Data processing pipelines
-* Advanced parsers with functional programming (Haskell)
+* Text parsers of any kind
