@@ -265,3 +265,11 @@ h2 {
 p {
   text-indent: 1rem;
 }
+
+ul li { 
+  list-style-type: "✔"
+}
+
+img {
+  border-radius: 30%;
+}
