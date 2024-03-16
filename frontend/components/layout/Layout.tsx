@@ -7,31 +7,36 @@ import Animation from "../animation/Animation";
 import Footer from "../footer/Footer";
 
 interface Layout {
-    content: string,
+    content: any,
     preamble?: ReactNode
 }
-const Layout: React.FC<Layout> = ({ content, preamble }) => {
+
+export const Layout: React.FC<Layout> = ({ content, preamble }) => {
 
     return (
         <>
-        <div className="mainx">
-        <div className="top">
-        <Header />
-        <div className="animation">
-        <Animation height={180} />
-        </div>
-        <Navigator />
-        </div>
+            <div className="mainx">
+                <div className="top">
+                    <Header />
+                    <div className="animation">
+                        <Animation height={180} />
+                    </div>
+                    <Navigator />
+                </div>
 
-        <main>
-                <div className="spacer"></div>
-                { preamble }
-                <Content markdown={content} />
-            </main>
-            <Footer />
-        </div>
+                <main>
+                    <div className="spacer"></div>
+                    { preamble }
+                    { content }
+                </main>
+                <Footer />
+            </div>
         </>
     );
 }
 
-export default Layout;
+
+export const fromMarkdown = (content: string) => {
+
+    return(<Content markdown={content} />)
+}

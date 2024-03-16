@@ -1,4 +1,4 @@
-import Layout from "../components/layout/Layout";
+import {Layout, fromMarkdown} from "../components/layout/Layout";
 
 import content from "../../content/web-services.md";
 import ServiceStatusDisplay from "../components/service/Checker";
@@ -6,7 +6,7 @@ import ServiceStatusDisplay from "../components/service/Checker";
 export default function Services() {
   return (
     <>
-    <Layout content={content} preamble={<ServiceStatusDisplay />} />
+      <Layout content={fromMarkdown(content)} preamble={<ServiceStatusDisplay />} />
     </>
   );
 }

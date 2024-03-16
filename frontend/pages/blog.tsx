@@ -1,9 +1,9 @@
-import Layout from "../components/layout/Layout";
+import {Layout, fromMarkdown} from "../components/layout/Layout";
 
 import content from "../../content/blog.md";
 
 export default function Project() {
   return (
-      <Layout content={content} />
+    <Layout content={fromMarkdown(content)} />
   );
 }
