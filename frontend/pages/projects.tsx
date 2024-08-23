@@ -42,7 +42,23 @@ export default function Project() {
       github: 'https://github.com/Gab0/nutshell-website',
       service: 'https://nutshellbiotech.com/'
     },
-
+    { title: 'Psychological Experiments',
+      content: 'A collection of psychological experiments implemented in JavaScript. It includes the Hanoi Tower, the Balloon Analogue Risk Task, and others.',
+      image: 'psychological-experiments.png',
+      github: 'https://github.com/Gab0/psychological-expt',
+      service: 'https://psy.nutshellbiotech.com/',
+      priority: 20
+    },
+    { title: 'Methylation Pipeline',
+      content: 'A pipeline pull raw methylation data from GEO and analyze it.',
+      image: 'methylation-pipeline.png',
+      priority: 5
+    },
+    { title: 'GPT Podcast Highlights',
+      content: 'A system that takes a subtitle file from a podcast and uses an LLM to highlight the most interesting parts.',
+      image: 'podcast-highlights.png',
+      priority: -5
+    }
   ];
 
   cardsData.sort((a, b) => (b.priority || 0) - (a.priority || 0));
