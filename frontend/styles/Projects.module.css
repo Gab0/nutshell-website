@@ -1,0 +1,45 @@
+
+.projectPanel {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 3em;
+  max-width: 90%;
+}
+
+.projectImage {
+  border-radius: 30%;
+  border: 0.15em solid var(--3);
+}
+
+.projectCard {
+  position: relative;
+  height: 100%;
+  background-color: var(--4);
+}
+
+.cardTitle {
+  margin: 0.5em;
+  margin-right: 0.1em;
+}
+
+.cardContent {
+  min-height: 27em;
+  max-height: 27em;
+}
+
+.cardText {
+  border-radius: 0.5em;
+  margin: 1em;
+  margin-right: 0.5em;
+}
+
+.cardLinkPanel {
+  background-color: var(--4);
+  border-radius: 0.5em;
+  position: absolute;
+  bottom: 5%;
+  left: 30%;
+  z-index: 1;
+
+}

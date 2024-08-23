@@ -1,7 +1,15 @@
-:root {
+:root1 {
   --1: #F2F1EE;
   --2: #435058;
   --3: #BFB7B6;
+}
+
+:root {
+  --1: #DFBDA4;
+  --2: #513C2C;
+  --3: #0A070D;
+  --4: #E3ECF2;
+  --5: #FDFDFD;
 }
 
 .center {
@@ -10,7 +18,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: var(--5);
   margin: 0px;
   font-family: Helveltica, sans-serif;
   overflow-y: scroll;
@@ -22,13 +30,14 @@ body {
   position: fixed;
   top: 0;
   z-index: 1;
-  background-color: (var--1);
+  background-color: var(--1);
 }
 
 .top {
   top: 0;
   position: fixed;
   width: 100%;
+  z-index: 2;
 }
 
 .header {
@@ -37,12 +46,14 @@ body {
   margin-top: 0em;
   background-color: var(--1);
   border-radius: 0em;
-  z-index: 12;
+  z-index: 16;
   height: 120px;
 }
 
 .title {
-  z-index: 10;
+  position: relative;
+  z-index: 160000;
+  color: #000000;
 }
 
 .navbar {
@@ -51,6 +62,9 @@ body {
   background-color: var(--2);
   border-radius: 0em;
   margin: auto;
+  border-bottom: 0.3em solid #303030;
+  padding-top: 1.2em;
+  z-index: 10;
 }
 
 .content {
@@ -67,7 +81,7 @@ body {
   position: relative;
   color: #f0f0f0;
   cursor: pointer;
-  z-index: 1;
+  z-index: 5;
   padding: 10px 20px;
   align-items: center;
   /*display: flex; */
@@ -78,6 +92,7 @@ body {
   touch-action: manipulation;
   margin-left: 5%;
   white-space: nowrap;
+  z-index: 10;
 }
 
 .nav-button::after,
@@ -86,7 +101,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: -99999;
+  z-index: 2;
   transition: all .4s;
 }
 
@@ -94,7 +109,7 @@ body {
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
-  background: #28282d;
+  background: var(--2);
   border-radius: 10px;
 }
 
@@ -237,7 +252,7 @@ body {
 }
 
 .footer {
-  background-color: var(--3);
+  background-color: var(--4);
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -268,8 +283,4 @@ p {
 
 ul li { 
   list-style-type: "✔"
-}
-
-img {
-  border-radius: 30%;
 }

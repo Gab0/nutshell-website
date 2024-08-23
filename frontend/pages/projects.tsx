@@ -1,6 +1,8 @@
 import {Layout} from "../components/layout/Layout";
 import { parse } from 'yaml';
 
+import styles from '../styles/Projects.module.css';
+
 import { Grid, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 
@@ -63,24 +65,25 @@ export default function Project() {
 
   cardsData.sort((a, b) => (b.priority || 0) - (a.priority || 0));
 
-  const element = <Grid container spacing={3}>
+  const element = <Grid container spacing={3} className={styles.projectPanel}>
       {cardsData.map((card, id) => (
         <Grid item key={id} xs={3} sm={6} md={3} lg={3}>
-          <Card>
-            <CardContent>
-      <CardMedia
-        component="img"
-        height="194"
-        image={"/project/" + card.image}
-        alt={card.image}
-      />
-        <Typography variant="h5" component="h2">
+          <Card className={styles.projectCard}>
+            <CardContent className={styles.cardContent}>
+              <CardMedia
+                component="img"
+                height="194"
+                image={"/project/" + card.image}
+                alt={card.image}
+                className={styles.projectImage}
+              />
+        <Typography variant="h5" component="h2" className={styles.cardTitle}>
         {card.title}
         </Typography>
-        <Typography color="textSecondary">
+        <Typography color="textSecondary" className={styles.cardText}>
         {card.content}
         </Typography>
-        <Typography align="center">
+        <Typography align="center" className={styles.cardLinkPanel}>
         <IconButton
         href={card.github!}
         disabled={card.github === undefined}
