@@ -65,9 +65,11 @@ export default function Project() {
 
   cardsData.sort((a, b) => (b.priority || 0) - (a.priority || 0));
 
-  const element = <Grid container spacing={3} className={styles.projectPanel}>
+  const element =
+    <div className={styles.projectPanel}>
+    <Grid container spacing={3}>
       {cardsData.map((card, id) => (
-        <Grid item key={id} xs={3} sm={6} md={3} lg={3}>
+        <Grid item key={id} xs={12} sm={6} md={4} lg={3}>
           <Card className={styles.projectCard}>
             <CardContent className={styles.cardContent}>
               <CardMedia
@@ -109,6 +111,7 @@ export default function Project() {
         </Grid>
       ))}
   </Grid>
+  </div>
 
   return (
     <Layout content={element}/>
