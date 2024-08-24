@@ -65,6 +65,7 @@ body {
   border-bottom: 0.3em solid #303030;
   padding-top: 1.2em;
   z-index: 10;
+  max-height: 1.5em;
 }
 
 .content {
@@ -165,10 +166,10 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
   white-space: nowrap;
-  margin-top: 0.5%;
+  margin-top: auto;
 }
 
 .title-button:disabled {
@@ -261,7 +262,7 @@ body {
 }
 
 .spacer {
-  height: 15em;
+  height: 16em;
 }
 
 .contact {
@@ -274,7 +275,7 @@ h3 {
 }
 
 h2 {
-  margin-top: 56px;
+  margin-top: 25m;
   margin-bottom: -10px;
 }
 
