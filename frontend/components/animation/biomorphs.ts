@@ -31,14 +31,19 @@ export default class Biomorph {
       this.genes[i] = random.int(-8, 8);
     }
     this.genes[8] = random.int(3, 9);
+
+    this.genes[9] = random.int(1, 5);
+    this.genes[10] = random.int(1, 5);
   }
 
   mutate() {
-    const idx = random.int(0, 9);
+    const idx = random.int(0, 11);
     this.genes[idx] += random.int(-3, 3);
     if (this.genes[idx] < -8) this.genes[idx] = -8;
     if (this.genes[idx] > 8) this.genes[idx] = 8;
     if (this.genes[8] < 3) this.genes[8] = 3;
+    if (this.genes[9] > 4) this.genes[9] = 4;
+    if (this.genes[10] > 4) this.genes[10] = 4;
   }
 
   draw(ctx: CanvasRenderingContext2D) {
@@ -50,12 +55,14 @@ export default class Biomorph {
 
     const strokes: strokesT = this.tree(this.position + (this.width / 2), this.height / 2, dx, dy, g[8], 2);
 
-    ctx.lineWidth = 3;
-    //ctx.strokeStyle = 'white';
-    //this.drawStrokes(ctx, this.strokes);
+    ctx.lineWidth = this.genes[9];
+
+    ctx.strokeStyle = 'white';
+    this.drawStrokes(ctx, this.strokes);
 
     this.strokes = strokes;
 
+    ctx.lineWidth = this.genes[10];
     ctx.strokeStyle = 'black';
     this.drawStrokes(ctx, this.strokes);
 
