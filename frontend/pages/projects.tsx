@@ -52,7 +52,7 @@ export default function Project() {
       priority: 20
     },
     { title: 'Methylation Pipeline',
-      content: 'A pipeline pull raw methylation data from GEO and analyze it.',
+      content: 'A pipeline that pulls raw methylation data from NCBI\'s Gene Expression Omnibus database and analyze it using R packages. Further details are confidential.',
       image: 'methylation-pipeline.png',
       priority: 5
     },
